@@ -2,6 +2,25 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.nextia.kali">
 
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"></uses-permission>
+
+    <!--Creo el permiso para que la llave solo pueda ser usada en esta aplicacion-->
+    <permission
+        android:name="com.example.nextia.kali.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature"></permission>
+    <!--Llamo el permiso que acabo de crear
+    <uses-permission android:name="com.example.nextia.kali.permission.MAPS_RECEIVE"></uses-permission>
+-->
+    <uses-permission android:name="com.google.android.providers.gsf.permissions.READ_GSERVICES"></uses-permission>
+
+    <uses-feature android:glEsVersion="0x00020000"
+        android:required="true"></uses-feature>
+
+    <meta-data android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version"></meta-data>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,12 +29,44 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
+
+        </activity>
+        <activity android:name=".BuscarActivity" />
+        <activity android:name=".RegistroLoginActivity" />
+        <activity android:name=".Registro" />
+        <activity android:name=".RegistroA" />
+        <activity android:name=".RegistroB" />
+        <activity android:name=".UbicacionUsuarioBActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
+        <activity android:name=".PaquetesActivity" />
+        <activity android:name=".ResumenActivity" />
+        <activity android:name=".MetodoPagoActivity" />
+        <activity android:name=".BienvenidoActivity" />
+        <activity android:name=".PromocionesActivity" />
+        <activity android:name=".NegocioActivity" />
+        <!--<activity android:name=".Perfil" />-->
+        <activity android:name=".PerfilActivity" />
+        <activity android:name=".MensajesActivity" />
+        <activity android:name=".HistorialLLamadasActivity" />
+        <activity android:name=".AgendaActivity" />
+        <activity android:name=".VentasActivity" />
+        <activity android:name=".EditarPerfilActivity" />
+        <activity android:name=".PerfilAjenoActivity" />
+
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBHAoiBtNTz7j7TUJ--y0SO-MCGjBOObrQ" />
+
+
     </application>
 
 </manifest>
